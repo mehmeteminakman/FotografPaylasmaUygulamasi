@@ -44,7 +44,7 @@
                                 <rect key="frame" x="41" y="532" width="91" height="35"/>
                                 <color key="tintColor" systemColor="secondarySystemBackgroundColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Giriş Yap" cornerStyle="capsule">
+                                <buttonConfiguration key="configuration" style="plain" title="Giriş Yap">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="0.87420280612244894" colorSpace="custom" customColorSpace="sRGB"/>
                                     </backgroundConfiguration>
@@ -57,7 +57,7 @@
                                 <rect key="frame" x="244" y="532" width="83" height="35"/>
                                 <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Kayıt Ol" cornerStyle="capsule">
+                                <buttonConfiguration key="configuration" style="plain" title="Kayıt Ol">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="0.87050914115646261" colorSpace="custom" customColorSpace="sRGB"/>
                                     </backgroundConfiguration>
@@ -105,8 +105,56 @@
                     <view key="view" contentMode="scaleToFill" id="Anu-bK-GLV">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Yorum Yazınız..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BIt-Ag-Fve">
+                                <rect key="frame" x="33" y="520" width="327" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="MWq-1g-qMZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51e-du-Nat">
+                                <rect key="frame" x="157" y="603" width="79" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="9z9-Ap-gfX"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Upload"/>
+                                <connections>
+                                    <action selector="uploadButtonTiklandi:" destination="sT6-fM-PYL" eventType="touchUpInside" id="3TO-K2-vYY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Görsel yüklemek için yukardaki ikona tıkla" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nco-pe-KQQ">
+                                <rect key="frame" x="33" y="482" width="314.33333333333331" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="n2Y-om-QHo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image" translatesAutoresizingMaskIntoConstraints="NO" id="Kke-3J-MkJ">
+                                <rect key="frame" x="16" y="91" width="361" height="352"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="tuW-wY-Pke"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" red="0.39307252370000001" green="0.3823774405" blue="0.92198525450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="nco-pe-KQQ" firstAttribute="top" secondItem="Kke-3J-MkJ" secondAttribute="bottom" constant="39" id="1na-aN-7jr"/>
+                            <constraint firstItem="BIt-Ag-Fve" firstAttribute="top" secondItem="nco-pe-KQQ" secondAttribute="bottom" constant="17" id="4QK-mD-PCd"/>
+                            <constraint firstItem="Kke-3J-MkJ" firstAttribute="trailing" secondItem="Anu-bK-GLV" secondAttribute="trailingMargin" id="B0X-hI-8ng"/>
+                            <constraint firstItem="Kke-3J-MkJ" firstAttribute="top" secondItem="tuW-wY-Pke" secondAttribute="top" constant="91" id="Kfp-qt-eeU"/>
+                            <constraint firstItem="BIt-Ag-Fve" firstAttribute="centerX" secondItem="51e-du-Nat" secondAttribute="centerX" id="U3y-FJ-ieE"/>
+                            <constraint firstItem="nco-pe-KQQ" firstAttribute="leading" secondItem="tuW-wY-Pke" secondAttribute="leading" constant="33" id="VHz-og-6Hn"/>
+                            <constraint firstItem="nco-pe-KQQ" firstAttribute="leading" secondItem="BIt-Ag-Fve" secondAttribute="leading" id="cpo-df-OhS"/>
+                            <constraint firstItem="Kke-3J-MkJ" firstAttribute="centerX" secondItem="BIt-Ag-Fve" secondAttribute="centerX" id="heU-rv-dw1"/>
+                            <constraint firstItem="Kke-3J-MkJ" firstAttribute="leading" secondItem="Anu-bK-GLV" secondAttribute="leadingMargin" id="nZi-fJ-kQP"/>
+                            <constraint firstItem="51e-du-Nat" firstAttribute="top" secondItem="BIt-Ag-Fve" secondAttribute="bottom" constant="49" id="yHk-B0-KFk"/>
+                            <constraint firstItem="tuW-wY-Pke" firstAttribute="bottom" secondItem="51e-du-Nat" secondAttribute="bottom" constant="165" id="yOk-gI-LGG"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Upload" id="Mhq-5z-47H">
                         <imageReference key="image" image="square.and.arrow.up" catalog="system" renderingMode="hierarchical">
@@ -117,10 +165,15 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="imageView" destination="Kke-3J-MkJ" id="80o-qm-L6Q"/>
+                        <outlet property="uploadButton" destination="51e-du-Nat" id="KAA-dq-L6z"/>
+                        <outlet property="yorumTextField" destination="BIt-Ag-Fve" id="u5d-Ir-1NM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5d-Az-ANs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1949" y="349"/>
+            <point key="canvasLocation" x="1948.854961832061" y="348.59154929577466"/>
         </scene>
         <!--Settings-->
         <scene sceneID="ImC-0g-f2D">
@@ -134,7 +187,7 @@
                                 <rect key="frame" x="149.66666666666666" y="408.66666666666669" width="94" height="35"/>
                                 <color key="tintColor" systemColor="groupTableViewBackgroundColor"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Çıkış Yap" cornerStyle="capsule">
+                                <buttonConfiguration key="configuration" style="plain" title="Çıkış Yap">
                                     <backgroundConfiguration key="background">
                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                                     </backgroundConfiguration>
@@ -216,6 +269,7 @@
     <resources>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="image" width="320" height="256"/>
         <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             // kullanıcı daha önce giriş yapmış
             let board = UIStoryboard(name: "Main", bundle: nil) // StoryBoard değişkene atandı
             let tabBar = board.instantiateViewController(identifier: "tabBar") as UITabBarController
-            window?.rootViewController = tabBar
+            window?.rootViewController = tabBar // root view Tabbar seçildi.
         }
         
         
