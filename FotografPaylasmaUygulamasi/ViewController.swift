@@ -23,6 +23,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction func girisYapTiklandi(_ sender: Any) {
+        if emailTextField.text != "" && sifreTextField.text != ""{
+            Auth.auth().signIn(withEmail: emailTextField.text!, password: sifreTextField.text!) { authdataresult, error in
+                if error != nil{
+                    self.MesajiGoster(titleInput: "Hata !", messageInput: error!.localizedDescription)
+                }else{
+                    self.performSegue(withIdentifier: "toFeedVc", sender: nil)
+                }
+            }
+        }
     }
     
     
