@@ -169,6 +169,7 @@
                         <outlet property="imageView" destination="Kke-3J-MkJ" id="80o-qm-L6Q"/>
                         <outlet property="uploadButton" destination="51e-du-Nat" id="KAA-dq-L6z"/>
                         <outlet property="yorumTextField" destination="BIt-Ag-Fve" id="u5d-Ir-1NM"/>
+                        <segue destination="0Db-0u-5RT" kind="presentation" identifier="uploadToFeed" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="5dP-Lf-hf9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P5d-Az-ANs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -179,7 +180,7 @@
         <scene sceneID="ImC-0g-f2D">
             <objects>
                 <viewController id="vDg-TG-jFE" customClass="SettingsViewController" customModule="FotografPaylasmaUygulamasi" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="42H-CX-mjh">
+                    <view key="view" contentMode="scaleToFill" id="42H-CX-mjh" customClass="Sett">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -240,6 +241,7 @@
                             </hierarchicalColors>
                         </imageReference>
                     </tabBarItem>
+                    <navigationItem key="navigationItem" id="gSA-5d-jLM"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BcF-Mb-i1W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -266,6 +268,9 @@
             <point key="canvasLocation" x="1045" y="-2"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="fgS-qH-QW0"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gear" catalog="system" width="128" height="122"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>

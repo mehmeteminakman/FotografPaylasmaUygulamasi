@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseStorage
+import FirebaseCore
+import FirebaseFirestore
 
 class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
@@ -37,14 +40,34 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
         uploadButton.backgroundColor = .systemIndigo
     }
     
-    
-    
-    
-    
-    
     @IBAction func uploadButtonTiklandi(_ sender: Any) {
+        print("UPLOAD TİKLANDİ")
+        let uuid = UUID().uuidString // uuid oluşturmamızın amacı firebase de aynı isimli dosyalarda override olur  (veri kaybı)
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let mediaFolder = storageRef.child("Media") // firebase de Media adlı klasör oluşturuldu
+        
+        let image = imageView.image!.jpegData(compressionQuality: 0.5) // kullanıcı image alındı data cast işlemi yapıldı
+        let imageRef = mediaFolder.child("\(uuid).jpg")
+         imageRef.putData(image!) { storagemetadata, error in
+            if error != nil{
+                self.mesajGoster(title: "Hata !", message: error!.localizedDescription)
+            }else{
+                self.mesajGoster(title: "Bilgi", message: "Görseliniz başarıyla upload edildi")
+                }
+            }
+        }
+    
+    
+    func mesajGoster(title : String, message : String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        let okButton = UIAlertAction(title: "OK" , style: UIAlertAction.Style.default, handler: nil)
+        alert.addAction(okButton)
+        self.present(alert, animated: true)
     }
     
     
-
+    
 }
+
+
