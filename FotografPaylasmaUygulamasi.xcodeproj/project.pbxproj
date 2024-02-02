@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BEC16C612B6D5F3800A0B1F9 /* feedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC16C602B6D5F3800A0B1F9 /* feedCell.swift */; };
 		BEEE9B502B6B9B6200547F1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE9B4F2B6B9B6200547F1A /* AppDelegate.swift */; };
 		BEEE9B522B6B9B6200547F1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE9B512B6B9B6200547F1A /* SceneDelegate.swift */; };
 		BEEE9B542B6B9B6200547F1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEEE9B532B6B9B6200547F1A /* ViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BEC16C602B6D5F3800A0B1F9 /* feedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = feedCell.swift; sourceTree = "<group>"; };
 		BEEE9B4C2B6B9B6200547F1A /* FotografPaylasmaUygulamasi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FotografPaylasmaUygulamasi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEEE9B4F2B6B9B6200547F1A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEEE9B512B6B9B6200547F1A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				BEEE9B512B6B9B6200547F1A /* SceneDelegate.swift */,
 				BEEE9B532B6B9B6200547F1A /* ViewController.swift */,
 				BEEE9B9F2B6BB80700547F1A /* FeedViewController.swift */,
+				BEC16C602B6D5F3800A0B1F9 /* feedCell.swift */,
 				BEEE9BA12B6BB82200547F1A /* UploadViewController.swift */,
 				BEEE9BA32B6BB83700547F1A /* SettingsViewController.swift */,
 				BEEE9B552B6B9B6200547F1A /* Main.storyboard */,
@@ -245,6 +248,7 @@
 				BEEE9BA42B6BB83700547F1A /* SettingsViewController.swift in Sources */,
 				BEEE9B542B6B9B6200547F1A /* ViewController.swift in Sources */,
 				BEEE9BA02B6BB80700547F1A /* FeedViewController.swift in Sources */,
+				BEC16C612B6D5F3800A0B1F9 /* feedCell.swift in Sources */,
 				BEEE9B502B6B9B6200547F1A /* AppDelegate.swift in Sources */,
 				BEEE9B522B6B9B6200547F1A /* SceneDelegate.swift in Sources */,
 			);
