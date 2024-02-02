@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseStorage
 import FirebaseCore
 import FirebaseFirestore
@@ -53,7 +54,32 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
             if error != nil{
                 self.mesajGoster(title: "Hata !", message: error!.localizedDescription)
             }else{
-                self.mesajGoster(title: "Bilgi", message: "Görseliniz başarıyla upload edildi")
+                imageRef.downloadURL { url, error in
+                    if error == nil{
+                        
+                        let urlString = url?.absoluteString
+                        let firestoreDatabase = Firestore.firestore()
+                        if let urlString = urlString{
+                            let data = ["email": Auth.auth().currentUser!.email! , "image" : urlString , "yorum":self.yorumTextField.text!, "tarih":FieldValue.serverTimestamp()] as! [String : Any]
+                            firestoreDatabase.collection("Post").addDocument(data: data) { error in
+                                if error == nil {
+                                    self.mesajGoster(title: "Bilgi", message: "Görseliniz başarıyla post edildi")
+                                }else{
+                                    self.mesajGoster(title: "Hata !", message: error!.localizedDescription)
+                                }
+                            }
+                        }
+                        
+                        
+                        
+                    }
+                    
+                }
+                
+                
+                
+                
+                
                 }
             }
         }
