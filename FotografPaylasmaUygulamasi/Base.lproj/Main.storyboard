@@ -265,44 +265,17 @@
                                                         <constraint firstAttribute="height" constant="385" id="XFc-F7-PmR"/>
                                                     </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgi-Ns-DVQ">
-                                                    <rect key="frame" x="307" y="484" width="30" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="hBs-TN-F2R"/>
-                                                    </constraints>
-                                                    <color key="tintColor" red="0.39307252370000001" green="0.3823774405" blue="0.92198525450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <buttonConfiguration key="configuration" style="plain">
-                                                        <backgroundConfiguration key="background" image="hand.thumbsup.fill" catalog="system"/>
-                                                    </buttonConfiguration>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcb-sP-hnj">
-                                                    <rect key="frame" x="343" y="484" width="30" height="25"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="30" id="pOJ-cJ-Ekg"/>
-                                                    </constraints>
-                                                    <color key="tintColor" red="0.39307252370000001" green="0.3823774405" blue="0.92198525450000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <buttonConfiguration key="configuration" style="plain">
-                                                        <backgroundConfiguration key="background" image="hand.thumbsdown.fill" catalog="system"/>
-                                                    </buttonConfiguration>
-                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="bgi-Ns-DVQ" firstAttribute="top" secondItem="Mcb-sP-hnj" secondAttribute="top" id="5T2-vo-SqR"/>
                                                 <constraint firstItem="NLO-I9-tlD" firstAttribute="leading" secondItem="Bmu-D4-4gL" secondAttribute="leading" id="5dy-86-FI1"/>
                                                 <constraint firstItem="Bmu-D4-4gL" firstAttribute="top" secondItem="NLO-I9-tlD" secondAttribute="bottom" constant="8" id="CIF-id-rLm"/>
                                                 <constraint firstItem="NLO-I9-tlD" firstAttribute="centerY" secondItem="hkA-ao-b4s" secondAttribute="centerY" id="GbN-kq-s1j"/>
                                                 <constraint firstItem="Bmu-D4-4gL" firstAttribute="bottom" secondItem="hkA-ao-b4s" secondAttribute="bottomMargin" id="Ohx-Ua-nTz"/>
                                                 <constraint firstItem="1rz-EK-7la" firstAttribute="leading" secondItem="NLO-I9-tlD" secondAttribute="leading" id="RHJ-YR-3fb"/>
-                                                <constraint firstItem="NLO-I9-tlD" firstAttribute="trailing" secondItem="Mcb-sP-hnj" secondAttribute="trailing" id="Tdh-ue-4Ob"/>
-                                                <constraint firstItem="Mcb-sP-hnj" firstAttribute="leading" secondItem="bgi-Ns-DVQ" secondAttribute="trailing" constant="6" id="dGx-T4-PNQ"/>
-                                                <constraint firstItem="bgi-Ns-DVQ" firstAttribute="leading" secondItem="Bmu-D4-4gL" secondAttribute="trailing" constant="15" id="dbK-yj-3ux"/>
                                                 <constraint firstItem="NLO-I9-tlD" firstAttribute="top" secondItem="1rz-EK-7la" secondAttribute="bottom" constant="8" id="gI4-BW-C0u"/>
                                                 <constraint firstItem="1rz-EK-7la" firstAttribute="top" secondItem="hkA-ao-b4s" secondAttribute="topMargin" constant="29" id="gW1-7l-B1v"/>
-                                                <constraint firstItem="bgi-Ns-DVQ" firstAttribute="bottom" secondItem="Mcb-sP-hnj" secondAttribute="bottom" id="h5m-ij-d8G"/>
                                                 <constraint firstItem="1rz-EK-7la" firstAttribute="trailing" secondItem="NLO-I9-tlD" secondAttribute="trailing" id="kBd-Vi-o4W"/>
-                                                <constraint firstItem="Bmu-D4-4gL" firstAttribute="centerY" secondItem="bgi-Ns-DVQ" secondAttribute="centerY" id="wbF-O0-J07"/>
                                                 <constraint firstItem="1rz-EK-7la" firstAttribute="leading" secondItem="hkA-ao-b4s" secondAttribute="leadingMargin" id="xX3-ck-HZG"/>
-                                                <constraint firstItem="bgi-Ns-DVQ" firstAttribute="top" secondItem="NLO-I9-tlD" secondAttribute="bottom" constant="24" id="z0j-rx-Pcx"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -363,12 +336,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="128" height="122"/>
-        <image name="hand.thumbsdown.fill" catalog="system" width="128" height="121"/>
-        <image name="hand.thumbsup.fill" catalog="system" width="128" height="121"/>
+        <image name="gear" catalog="system" width="32" height="32"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="image" width="320" height="256"/>
-        <image name="square.and.arrow.up" catalog="system" width="108" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="32" height="32"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -376,19 +347,19 @@
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemIndigoColor">
-            <color red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiaryLabelColor">
-            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

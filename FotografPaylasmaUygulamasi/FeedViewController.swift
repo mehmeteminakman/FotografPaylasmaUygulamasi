@@ -12,9 +12,10 @@ import SDWebImage
 class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    var emailDizisi = [String]()
+   /* var emailDizisi = [String]()
     var yorumDizisi = [String]()
-    var gorselDizisi = [String]()
+    var gorselDizisi = [String]()*/
+    var postDizisi = [Post]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +28,13 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return emailDizisi.count
+        return postDizisi.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! feedCell
-        cell.emailLabel.text = emailDizisi[indexPath.row]
-        cell.yorumLabel.text = yorumDizisi[indexPath.row]
-        cell.postImageView.sd_setImage(with: URL(string: gorselDizisi[indexPath.row]))
+        cell.emailLabel.text = postDizisi[indexPath.row].email
+        cell.yorumLabel.text = postDizisi[indexPath.row].yorum
+        cell.postImageView.sd_setImage(with: URL(string: postDizisi[indexPath.row].gorselUrl))
         return cell
     }
     
@@ -42,12 +43,13 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func firebaseVerileriAl(){
         
         
-        emailDizisi.removeAll()
-        yorumDizisi.removeAll()
-        gorselDizisi.removeAll()
+        //emailDizisi.removeAll()
+        //yorumDizisi.removeAll()
+        //gorselDizisi.removeAll()
+        postDizisi.removeAll(keepingCapacity: false)
         let firebase = Firestore.firestore()
         
-        firebase.collection("Post").addSnapshotListener { querysnapshot, error in
+        firebase.collection("Post").order(by: "tarih", descending: true).addSnapshotListener { querysnapshot, error in
             if error != nil{
                 self.mesajGoster(title: "Hata !", message: error!.localizedDescription)
             }else{
@@ -55,16 +57,16 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                     for document in querysnapshot!.documents {
                         
                         if let gorsel = document.get("image") as? String{
-                            self.gorselDizisi.append(gorsel)
+                            //self.gorselDizisi.append(gorsel)
+                            if let email = document.get("email") as? String{
+                                //self.emailDizisi.append(email)
+                                if let yorum = document.get("yorum") as? String{
+                                    //self.yorumDizisi.append(yorum)
+                                    let post = Post(gorselUrl: gorsel, email: email, yorum: yorum)
+                                    self.postDizisi.append(post)
+                                }
+                            }
                         }
-                        if let email = document.get("email") as? String{
-                            self.emailDizisi.append(email)
-                        }
-                        if let yorum = document.get("yorum") as? String{
-                            self.yorumDizisi.append(yorum)
-                        }
-                        
-                        
                     }
                     self.tableView.reloadData()
                     

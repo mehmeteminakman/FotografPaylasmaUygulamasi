@@ -63,15 +63,9 @@ class UploadViewController: UIViewController,UIImagePickerControllerDelegate,UIN
                             let data = ["email": Auth.auth().currentUser!.email! , "image" : urlString , "yorum":self.yorumTextField.text!, "tarih":FieldValue.serverTimestamp()] as! [String : Any]
                             firestoreDatabase.collection("Post").addDocument(data: data) { error in
                                 if error == nil {
-                                    let alert = UIAlertController(title: "Bilgi", message: "Görseliniz başarılı bir şekilde post edildi", preferredStyle: UIAlertController.Style.alert)
-                                    let okButton = UIAlertAction(title: "OK" , style: UIAlertAction.Style.default) { uıalertaction in
-                                        self.imageView.image = UIImage(named: "image")
-                                        self.yorumTextField.text = ""
-                                        self.tabBarController?.selectedIndex = 0
-                                    }
-                                    alert.addAction(okButton)
-                                    self.present(alert, animated: true)
-                                    
+                                    self.imageView.image = UIImage(named: "image")
+                                    self.yorumTextField.text = ""
+                                    self.tabBarController?.selectedIndex = 0
                                 }else{
                                     self.mesajGoster(title: "Hata !", message: error!.localizedDescription)
                                 }
